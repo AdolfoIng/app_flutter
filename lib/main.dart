@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Material App',
+      title: 'Material App Uber',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(elevation: 0),
         primaryColor: utils.Colors.uberCloneColor,
