@@ -1,3 +1,5 @@
+import 'package:app_uber1/pages/client/map/client_map_page.dart';
+import 'package:app_uber1/pages/driver/map/driver_map_page.dart';
 import 'package:app_uber1/pages/driver/register/driver_register_page.dart';
 import 'package:app_uber1/pages/home/home_page.dart';
 import 'package:app_uber1/pages/login/login_page.dart';
@@ -30,7 +32,9 @@ class MyApp extends StatelessWidget {
         'home': (BuildContext context) => Home(),
         'login': (BuildContext context) => const LoginPage(),
         'client/register': (BuildContext context) => const ClientRegisterPage(),
+        'client/map': (BuildContext context) => const ClientMapPage(),
         'driver/register': (BuildContext context) => const DriverRegisterPage(),
+        'driver/map': (BuildContext context) => const DriverMapPage(),
       },
     );
   }

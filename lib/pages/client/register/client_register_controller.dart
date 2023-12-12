@@ -4,6 +4,8 @@ import 'package:app_uber1/src/providers/auth_provider.dart';
 import 'package:app_uber1/src/providers/client_provider.dart';
 import 'package:flutter/material.dart';
 
+import 'package:app_uber1/pages/utils/snackbar.dart' as utils;
+
 class ClientRegisterController {
   BuildContext? context;
   GlobalKey<ScaffoldState> key = GlobalKey<ScaffoldState>();
@@ -60,6 +62,12 @@ class ClientRegisterController {
             password: password);
 
         await _clientProvider!.create(client);
+
+        Navigator.pushNamedAndRemoveUntil(
+            context!, 'client/map', (route) => false);
+
+        utils.Snackbar.showSnackbar(
+            context!, key, 'El se Registro correctamente');
       } else {
         debugPrint('Ocurrio an error ');
       }

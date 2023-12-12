@@ -17,4 +17,21 @@ class DriverProvider {
       return Future.error(e);
     }
   }
+
+  Future<Driver> getById(String id) async {
+    DocumentSnapshot document = await _ref!.doc(id).get();
+    final Map<String, dynamic> data = document.data() as Map<String, dynamic>;
+    Driver driver = Driver.fromJsonLogin(data);
+    return driver;
+  }
+
+  Future<bool> getByIdVerificar(String id) async {
+    DocumentSnapshot document = await _ref!.doc(id).get();
+    debugPrint('VERIFICANDO DRIVER .. ');
+
+    if (document.data() == null) {
+      return false;
+    }
+    return true;
+  }
 }

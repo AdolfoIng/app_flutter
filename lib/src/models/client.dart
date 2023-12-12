@@ -8,13 +8,13 @@ class Client {
   String id;
   String username;
   String email;
-  String password;
+  String? password;
 
   Client({
     required this.id,
     required this.username,
     required this.email,
-    required this.password,
+    this.password,
   });
 
   factory Client.fromJson(Map<String, dynamic> json) => Client(
@@ -22,6 +22,12 @@ class Client {
         username: json["username"],
         email: json["email"],
         password: json["password"],
+      );
+
+  factory Client.fromJsonLogin(Map<String, dynamic> json) => Client(
+        id: json["id"],
+        email: json["email"],
+        username: json["username"],
       );
 
   Map<String, dynamic> toJson() => {

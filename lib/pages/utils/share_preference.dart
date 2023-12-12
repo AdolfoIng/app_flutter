@@ -10,6 +10,10 @@ class SharedPreference {
 
   Future<dynamic> read(String key) async {
     final preference = await SharedPreferences.getInstance();
+
+    if (preference.getString(key) == null) {
+      return null;
+    }
     final String? action = preference.getString(key);
     return jsonDecode(action.toString());
   }

@@ -12,14 +12,14 @@ class Driver {
   String id;
   String username;
   String email;
-  String password;
+  String? password;
   String placa;
 
   Driver({
     required this.id,
     required this.username,
     required this.email,
-    required this.password,
+    this.password,
     required this.placa,
   });
 
@@ -28,6 +28,13 @@ class Driver {
         username: json["username"],
         email: json["email"],
         password: json["password"],
+        placa: json["placa"],
+      );
+
+  factory Driver.fromJsonLogin(Map<String, dynamic> json) => Driver(
+        id: json["id"],
+        username: json["username"],
+        email: json["email"],
         placa: json["placa"],
       );
 

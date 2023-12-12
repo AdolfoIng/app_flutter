@@ -1,15 +1,28 @@
 import 'package:app_uber1/pages/home/home_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   //const Home({super.key});
-
   final HomeController _controller = HomeController();
 
   @override
-  Widget build(BuildContext context) {
-    _controller.init(context);
+  void initState() {
+    // TODO: implement initState
+    super.initState();
 
+    SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+      _controller.init(context);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Column(

@@ -4,6 +4,8 @@ import 'package:app_uber1/src/providers/auth_provider.dart';
 import 'package:app_uber1/src/providers/driver_provider.dart';
 import 'package:flutter/material.dart';
 
+import 'package:app_uber1/pages/utils/snackbar.dart' as utils;
+
 class DriverRegisterController {
   BuildContext? context;
   GlobalKey<ScaffoldState> key = GlobalKey<ScaffoldState>();
@@ -82,6 +84,12 @@ class DriverRegisterController {
             placa: placa);
 
         await _driverProvider!.create(driver);
+
+        Navigator.pushNamedAndRemoveUntil(
+            context!, 'driver/map', (route) => false);
+
+        utils.Snackbar.showSnackbar(
+            context!, key, 'El se Registro correctamente');
       } else {
         debugPrint('Ocurrio an error ');
       }

@@ -17,4 +17,21 @@ class ClientProvider {
       return Future.error(e);
     }
   }
+
+  Future<Client> getById(String id) async {
+    DocumentSnapshot document = await _ref!.doc(id).get();
+    final Map<String, dynamic> data = document.data() as Map<String, dynamic>;
+    Client client = Client.fromJsonLogin(data);
+    return client;
+  }
+
+  Future<bool> getByIdVerificar(String id) async {
+    DocumentSnapshot document = await _ref!.doc(id).get();
+    debugPrint('VERIFICANDO .. ');
+
+    if (document.data() == null) {
+      return false;
+    }
+    return true;
+  }
 }
