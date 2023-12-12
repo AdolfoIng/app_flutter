@@ -46,7 +46,7 @@ class _OTPFieldsState extends State<OTPFields> {
   FocusNode? pin6FN;
   FocusNode? pin7FN;
 
-  final pinStyle = TextStyle(fontSize: 25, fontWeight: FontWeight.bold);
+  final pinStyle = const TextStyle(fontSize: 25, fontWeight: FontWeight.bold);
 
   @override
   void initState() {

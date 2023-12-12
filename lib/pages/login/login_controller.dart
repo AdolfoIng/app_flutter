@@ -1,6 +1,5 @@
 import 'package:app_uber1/pages/utils/share_preference.dart';
 import 'package:app_uber1/pages/utils/snackbar.dart' as utils;
-import 'package:app_uber1/src/models/client.dart';
 import 'package:app_uber1/src/providers/auth_provider.dart';
 import 'package:app_uber1/src/providers/client_provider.dart';
 import 'package:app_uber1/src/providers/driver_provider.dart';

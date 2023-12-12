@@ -159,6 +159,7 @@ class _DriverRegisterPageState extends State<DriverRegisterPage> {
   Widget _buttonRegister() {
     return ButtonApp(
         color: Colors.black,
+        colorText: Colors.white,
         texto: 'Crear Cuenta',
         onPresed: _controllerRegister.registerUser);
   }

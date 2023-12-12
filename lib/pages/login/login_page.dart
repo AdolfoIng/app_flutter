@@ -109,6 +109,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget _buttonLogin() {
     return ButtonApp(
         color: Colors.black,
+        colorText: Colors.white,
         texto: 'Iniciar Sesion',
         onPresed: _controller.login);
   }

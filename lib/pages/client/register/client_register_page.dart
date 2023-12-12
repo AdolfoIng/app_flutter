@@ -134,6 +134,7 @@ class _ClientRegisterPageState extends State<ClientRegisterPage> {
   Widget _buttonRegister() {
     return ButtonApp(
         color: Colors.black,
+        colorText: Colors.white,
         texto: 'Crear Cuenta',
         onPresed: _controllerRegister.registerUser);
   }
